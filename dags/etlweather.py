@@ -47,7 +47,8 @@ with DAG(dag_id='weather_etl_pipeline',
             return response.json()
         else:
             raise Exception(f"Failed to fetch weather data: {response.status_code}")
-        
+
+     # def class for location and weather data   
     @task()
     def transform_weather_data(weather_data):
         """Transform the extracted weather data."""
